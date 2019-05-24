@@ -8,11 +8,12 @@
 $container-desktop: 970px;
 $container-large-desktop: 970px;
 
-$font-family-base: "Muli", sans-serif;
-$headings-font-family: "Quando", sans-serif;
+$font-family-base: Arial, Helvetica, sans-serif;
+$headings-font-family: Arial, Helvetica, sans-serif;
 $headings-font-weight: 400;
 
-$font-size-base: 14px;
+$font-size-base: 12px;
+$font-size-print-base: 10px;
 $font-size-h1: floor(($font-size-base * 2.5));
 $font-size-h2: floor(($font-size-base * 1.6));
 $font-size-h3: floor(($font-size-base * 1));
@@ -29,63 +30,81 @@ $grid-gutter-width: 20px;
   Theme Colors
 ———————————–———————————–*/
 
-$default-base: #5F7C8A;
-$red-base: #C46767;
-$pink-base: #D95D87;
-$blue-base: #59A2DD;
-$purple-base: #8064A7;
+$default-base: #5f7c8a;
+$red-base: #c46767;
+$pink-base: #d95d87;
+$blue-base: #59a2dd;
+$purple-base: #8064a7;
 $brown-base: #785447;
-$teal-base: #54C2B8;
-$green-base: #6BAB6E;
+$teal-base: #54c2b8;
+$green-base: #6bab6e;
 
-$all-colors: ("default": ("base": $default-base,
-                          "sub": lighten($default-base, 10%),
-                          "text": darken($default-base, 50%),
-                          "muted": grayscale($default-base),
-                          "bg": lighten($default-base, 45%),
-                          "heading": lighten($default-base, 40%)),
-              "red": ("base": $red-base,
-                      "sub": lighten($red-base, 20%),
-                      "text": darken($red-base, 50%),
-                      "muted": grayscale($red-base),
-                      "bg": lighten($red-base, 40%),
-                      "heading": lighten($red-base, 30%)),
-              "pink": ("base": $pink-base,
-                       "sub": lighten($pink-base, 20%),
-                       "text": darken($pink-base, 50%),
-                       "muted": grayscale($pink-base),
-                       "bg": lighten($pink-base, 38%),
-                       "heading": lighten($pink-base, 30%)),
-              "brown": ("base": $brown-base,
-                       "sub": lighten($brown-base, 10%),
-                       "text": darken($brown-base, 50%),
-                       "muted": grayscale($brown-base),
-                       "bg": lighten($brown-base, 50%),
-                       "heading": lighten($brown-base, 40%)),
-              "blue": ("base": $blue-base,
-                       "sub": lighten($blue-base, 10%),
-                       "text": darken($blue-base, 50%),
-                       "muted": grayscale($blue-base),
-                       "bg": lighten($blue-base, 35%),
-                       "heading": lighten($blue-base, 25%)),
-              "purple": ("base": $purple-base,
-                          "sub": lighten($purple-base, 20%),
-                          "text": darken($purple-base, 50%),
-                          "muted": grayscale($purple-base),
-                          "bg": lighten($purple-base, 40%),
-                          "heading": lighten($purple-base, 30%)),
-              "teal":  ("base": $teal-base,
-                        "sub": lighten($teal-base, 10%),
-                        "text": darken($teal-base, 50%),
-                        "muted": grayscale($teal-base),
-                        "bg": lighten($teal-base, 40%),
-                        "heading": lighten($teal-base, 30%)),
-              "green": ("base": $green-base,
-                        "sub": lighten($green-base, 10%),
-                        "text": darken($green-base, 50%),
-                        "muted": grayscale($green-base),
-                        "bg": lighten($green-base, 40%),
-                        "heading": lighten($green-base, 30%)));
+$all-colors: (
+  "default": (
+    "base": $default-base,
+    "sub": lighten($default-base, 10%),
+    "text": darken($default-base, 50%),
+    "muted": grayscale($default-base),
+    "bg": lighten($default-base, 45%),
+    "heading": lighten($default-base, 40%)
+  ),
+  "red": (
+    "base": $red-base,
+    "sub": lighten($red-base, 20%),
+    "text": darken($red-base, 50%),
+    "muted": grayscale($red-base),
+    "bg": lighten($red-base, 40%),
+    "heading": lighten($red-base, 30%)
+  ),
+  "pink": (
+    "base": $pink-base,
+    "sub": lighten($pink-base, 20%),
+    "text": darken($pink-base, 50%),
+    "muted": grayscale($pink-base),
+    "bg": lighten($pink-base, 38%),
+    "heading": lighten($pink-base, 30%)
+  ),
+  "brown": (
+    "base": $brown-base,
+    "sub": lighten($brown-base, 10%),
+    "text": darken($brown-base, 50%),
+    "muted": grayscale($brown-base),
+    "bg": lighten($brown-base, 50%),
+    "heading": lighten($brown-base, 40%)
+  ),
+  "blue": (
+    "base": $blue-base,
+    "sub": lighten($blue-base, 10%),
+    "text": darken($blue-base, 50%),
+    "muted": grayscale($blue-base),
+    "bg": lighten($blue-base, 35%),
+    "heading": lighten($blue-base, 25%)
+  ),
+  "purple": (
+    "base": $purple-base,
+    "sub": lighten($purple-base, 20%),
+    "text": darken($purple-base, 50%),
+    "muted": grayscale($purple-base),
+    "bg": lighten($purple-base, 40%),
+    "heading": lighten($purple-base, 30%)
+  ),
+  "teal": (
+    "base": $teal-base,
+    "sub": lighten($teal-base, 10%),
+    "text": darken($teal-base, 50%),
+    "muted": grayscale($teal-base),
+    "bg": lighten($teal-base, 40%),
+    "heading": lighten($teal-base, 30%)
+  ),
+  "green": (
+    "base": $green-base,
+    "sub": lighten($green-base, 10%),
+    "text": darken($green-base, 50%),
+    "muted": grayscale($green-base),
+    "bg": lighten($green-base, 40%),
+    "heading": lighten($green-base, 30%)
+  )
+);
 
 $theme-color: map-get(map-get($all-colors, "{{ site.data.resume.color }}"), "base");
 $theme-sub: map-get(map-get($all-colors, "{{ site.data.resume.color }}"), "sub");
@@ -147,7 +166,12 @@ footer {
 
 /* Heading */
 
-h1, h2, h3, h4, h5, h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 .panel-title,
 .resume-contact {
   color: $color-base;
@@ -205,7 +229,7 @@ a {
 /* Panel */
 
 .panel {
-  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .panel-default {
@@ -228,6 +252,11 @@ a {
   overflow: hidden;
 }
 
+.phonetic {
+  font-size: 50%;
+  font-style: italic;
+}
+
 .panel-title {
   font-size: $font-size-base - 2;
   text-transform: uppercase;
@@ -236,14 +265,14 @@ a {
 }
 
 .panel-body {
-  height: 280px;
+  height: 320px;
   overflow: hidden;
 }
 
 /* Navbar */
 
 .navbar-default {
-  background-color: #FFF;
+  background-color: #fff;
 }
 
 .navbar {
@@ -261,8 +290,11 @@ a {
 
   @each $color-name in $color-list {
     .theme-#{$color-name} & {
-      @include button-variant(#fff, map-get(map-get($all-colors, $color-name), "base"),
-      darken(map-get(map-get($all-colors, $color-name), "base"), 10%));
+      @include button-variant(
+        #fff,
+        map-get(map-get($all-colors, $color-name), "base"),
+        darken(map-get(map-get($all-colors, $color-name), "base"), 10%)
+      );
     }
   }
 }
@@ -272,16 +304,25 @@ a {
 .modal-body,
 .modal-footer {
   text-align: center;
-  color: $color-base;
+  color: $color-text;
+
+  a,
+  .base {
+    color: $color-base;
+  }
 
   @each $color-name in $color-list {
     .theme-#{$color-name} & {
-      color: map-get(map-get($all-colors, $color-name), "base");
+      color: map-get(map-get($all-colors, $color-name), "text");
+      a,
+      .base {
+        color: map-get(map-get($all-colors, $color-name), "base");
+      }
     }
   }
 
   img {
-    border: 1px solid $color-sub;
+    border: 0px solid $color-sub;
 
     @each $color-name in $color-list {
       .theme-#{$color-name} & {
@@ -326,8 +367,8 @@ a {
 .resume-intro-maintitle {
   display: block;
   color: $color-base;
-  font-size: 40px;
-  font-family: "Quando", sans-serif;
+  font-size: $font-size-base * 3;
+  font-family: $font-family-base;
 
   @each $color-name in $color-list {
     .theme-#{$color-name} & {
@@ -371,9 +412,17 @@ script + p {
 /*++ Resume Content Area +++++++++++++++++++++++*/
 
 .resume-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   padding-top: 7px;
   color: #999;
-  text-align: center;
+  max-width: 500px;
+  margin: auto;
+}
+
+.resume-nav > * {
+ min-width: 70px;
 }
 
 .resume-dropdown {
@@ -412,7 +461,7 @@ script + p {
 .resume-baseinfo {
   p {
     color: $color-base;
-    font-family: "Quando", sans-serif;
+    font-family: $font-family-base;
     font-size: $font-size-base - 1;
 
     @each $color-name in $color-list {
@@ -424,7 +473,7 @@ script + p {
 }
 
 .resume-contact {
-  font-family: "Quando", sans-serif;
+  font-family: $font-family-base;
   font-size: $font-size-base - 1;
   word-wrap: break-word;
 
@@ -436,7 +485,7 @@ script + p {
 .resume-subheading {
   margin: $space-xs 0 $space-sm;
   color: $color-sub;
-  font-family: "Quando", sans-serif;
+  font-family: $font-family-base;
   font-size: $font-size-base;
 
   @each $color-name in $color-list {
@@ -463,13 +512,13 @@ script + p {
 }
 
 .resume-view-pdf {
-  margin:  $space-sm 0 $space-md;
+  margin: $space-sm 0 $space-md;
   text-align: center;
 }
 
 @media (max-width: $screen-sm-max) and (min-width: $screen-sm-min) {
   .panel-body {
-    height: 320px;
+    height: 360px;
   }
 }
 
@@ -496,24 +545,51 @@ script + p {
   @include make-grid(sm);
 
   @page {
-    size: US-Letter;
+    size: A4;
   }
 
   body {
     background-color: transparent !important;
     border: none;
+    font-size: 11px;
   }
 
   ul {
     padding-left: $space-md - 5;
   }
 
+  .resume-intro-maintitle {
+    font-size: $font-size-print-base * 3;
+  }
+
+  .resume-intro-subtitle {
+    font-size: $font-size-print-base;
+  }
+
+  .resume-baseinfo {
+    p {
+      font-size: $font-size-print-base;
+    }
+  }
+
+  .resume-contact {
+    font-size: $font-size-print-base;
+  }
+
+  h4 {
+    font-size: $font-size-print-base;
+  }
+
+  .resume-subheading {
+    font-size: $font-size-print-base -1;
+  }
+
   .resume-pic {
     float: left;
 
     img {
-      width: 120px;
-      height: 120px;
+      width: 100px;
+      height: 100px;
     }
 
     + .resume-baseinfo {
@@ -524,14 +600,21 @@ script + p {
   .panel {
     box-shadow: none;
     border: 1px solid #eee;
+    padding: 0px;
+  }
+
+  .panel-title {
+    font-size: $font-size-print-base - 1;
   }
 
   .panel-heading {
-    height: 35px;
+    height: 32px;
     overflow: hidden;
-  }
+   }
 
   .panel-body {
-    height: 280px;
+    height: 245px;
+    font-size: $font-size-print-base - 1;
+    padding: 4px 4px;
   }
 }
