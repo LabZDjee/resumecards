@@ -5,7 +5,7 @@ photo: "Bhikki.2018-03-07.png"
 photoTitle: "Succesful mission in Sheikhupura, Pakistan, 2018/03"
 name: "Gérard Gauthier"
 phoneticName: "[ʒerar gotie]"
-copy: "Senior Developer and Project Manager. In Embedded Systems for 20+ years. Involved In transnational projects requiring development skills, mainly in Human-Machine-Interfaces, Communications, and Energy Management"
+copy: "Senior Developer and Project Manager. In Embedded Systems for 20+ years. Involved In transnational projects requiring design and development skills, mainly in Human-Machine-Interfaces, Communications, and Energy Management"
 pdfLocalUrl: "/Gerard-Gauthier's-Resume.pdf"
 
 # Color scheme based on http://www.materialui.co/colors.
@@ -20,4 +20,4 @@ pdfLocalUrl: "/Gerard-Gauthier's-Resume.pdf"
 # - green
 color: blue
 
-revision: "2019/05/22"
+revision: "2019/05/27"
