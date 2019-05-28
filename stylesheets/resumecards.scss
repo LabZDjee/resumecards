@@ -482,6 +482,11 @@ script + p {
   }
 }
 
+p.resume-copy {
+  font-size: $font-size-base + 1;
+  word-wrap: break-word;
+}
+
 .resume-subheading {
   margin: $space-xs 0 $space-sm;
   color: $color-sub;
